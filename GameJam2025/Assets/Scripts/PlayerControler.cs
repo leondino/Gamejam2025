@@ -13,6 +13,10 @@ public class PlayerControler : MonoBehaviour
     /// Speed at which the player character moves
     /// </summary>
     [SerializeField] private float movementSpeed = 2f;
+    [Range(0, 1)]
+    [SerializeField] private float idleAnimationSpeed = 0.75f;
+    [Range(0, 2)]
+    [SerializeField] private float walkingAnimationSpeed = 1f;
     private Vector2 movementVector;
 
     private Animator animator;
@@ -43,9 +47,11 @@ public class PlayerControler : MonoBehaviour
             transform.LookAt(new Vector3(transform.position.x + movementVector.x, 0, 
                 transform.position.z + movementVector.y));
             animator.SetBool("isWalking", true);
+            animator.speed = walkingAnimationSpeed;
         }
         else
         {
+            animator.speed = idleAnimationSpeed;
             animator.SetBool("isWalking", false);
         }   
     }
