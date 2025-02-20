@@ -69,6 +69,8 @@ MonoBehaviour:
   canvas: {fileID: 0}
   quickTimeButton: {fileID: 4518322574917936324, guid: 91bbc64313b05fa4ca2b9f83fcec7ca9, type: 3}
   quickTimeFrequency: 3
+  maxClicks: 10
+  currentClicks: 0
   maxButtonScale: 0.4
   minButtonScale: 5
   buttonShrinkPercentageSpeed: 5

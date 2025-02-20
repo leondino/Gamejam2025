@@ -26,6 +26,7 @@ public class QuickTimeButton : MonoBehaviour
     {
         removeButton = true;
         isClicked = true;
+        currentQuickTimeEvent.currentClicks++;
     }
 
     /// <summary>
@@ -46,6 +47,7 @@ public class QuickTimeButton : MonoBehaviour
         {
             if (!isClicked)
             {
+                currentQuickTimeEvent.EventFailed();
                 Debug.Log("Button not clicked in time!!!");
             }
             Destroy(gameObject);

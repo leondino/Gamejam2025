@@ -1,17 +1,24 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class QuickTimeEventHandler : MonoBehaviour
 {
+    public UnityEvent OnEventSucceeded = new UnityEvent();
+    public UnityEvent OnEventFailed = new UnityEvent();
+
     [SerializeField] private Canvas canvas;
     public GameObject quickTimeButton;
     private float timer;
     [SerializeField] private float quickTimeFrequency = 3f;
+    [SerializeField] private int maxClicks = 10;
+    public int currentClicks = 0;
 
     public float maxButtonScale, minButtonScale;
     [Range(1, 50)]
     public int buttonShrinkPercentageSpeed = 5;
     public float secondBeforeButtonShrink = 1f;
     private float baseButtonRadius;
+    private bool eventCompleted = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -24,7 +31,7 @@ public class QuickTimeEventHandler : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (timer < quickTimeFrequency)
+        if (timer < quickTimeFrequency &! eventCompleted)
         {
             timer += Time.deltaTime;
             if (timer >= quickTimeFrequency)
@@ -33,6 +40,26 @@ public class QuickTimeEventHandler : MonoBehaviour
                 timer = 0;
             }
         }
+
+        // Check if the player has reached the maximum amount of clicks to complete the event
+        if (currentClicks >= maxClicks)
+        {
+            EventSucceeded();
+        }
+    }
+
+    public void EventSucceeded()
+    {
+        eventCompleted = true;
+        OnEventSucceeded.Invoke();
+        Debug.Log("Quick time event succeeded!");
+    }
+
+    public void EventFailed()
+    {
+        eventCompleted = true;
+        OnEventFailed.Invoke();
+        Debug.Log("Quick time event FAILED!!!");
     }
 
     /// <summary>
