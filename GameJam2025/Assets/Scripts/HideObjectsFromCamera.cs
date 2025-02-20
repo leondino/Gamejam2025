@@ -45,13 +45,16 @@ public class HideObjectsFromCamera : MonoBehaviour
         //other.gameObject.layer = 6;
         if (!alreadyHidden)
         {
-            objectsToHide.Add(new ObjectToHide
+            if (other.gameObject.GetComponent<Renderer>() != null)
             {
-                gameObject = other.gameObject,
-                ogMaterial = other.gameObject.GetComponent<Renderer>().material
-            });
+                objectsToHide.Add(new ObjectToHide
+                {
+                    gameObject = other.gameObject,
+                    ogMaterial = other.gameObject.GetComponent<Renderer>().material
+                });
 
-            other.gameObject.GetComponent<Renderer>().material = transparentMaterial;
+                other.gameObject.GetComponent<Renderer>().material = transparentMaterial;
+            }
         }
     }
 
@@ -63,9 +66,13 @@ public class HideObjectsFromCamera : MonoBehaviour
         {
             if (obj.gameObject == other.gameObject)
             {
-                other.gameObject.GetComponent<Renderer>().material = obj.ogMaterial;
-                objectsToHide.Remove(obj);
-                break;
+                Renderer otherRenderer = other.gameObject.GetComponent<Renderer>();
+                if (otherRenderer != null)
+                {
+                    other.gameObject.GetComponent<Renderer>().material = obj.ogMaterial;
+                    objectsToHide.Remove(obj);
+                    break;
+                }
             }
         }
     }
