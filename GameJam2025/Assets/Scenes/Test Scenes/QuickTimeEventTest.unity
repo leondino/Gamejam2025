@@ -43700,12 +43700,12 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -232448,6 +232448,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47235f17e57798c4fa753a731e9d66e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
+  quickTimeButton: {fileID: 4518322574917936324, guid: 91bbc64313b05fa4ca2b9f83fcec7ca9, type: 3}
+  quickTimeFrequency: 3
+  maxButtonScale: 0.3
+  minButtonScale: 3
+  baseButtonRadius: 0
 --- !u!1001 &1634640942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -303409,6 +303415,10 @@ PrefabInstance:
     - target: {fileID: 4518322574917936324, guid: 91bbc64313b05fa4ca2b9f83fcec7ca9, type: 3}
       propertyPath: m_Name
       value: QuickTimeButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518322574917936324, guid: 91bbc64313b05fa4ca2b9f83fcec7ca9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7537606004622814486, guid: 91bbc64313b05fa4ca2b9f83fcec7ca9, type: 3}
       propertyPath: m_Pivot.x

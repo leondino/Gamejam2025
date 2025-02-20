@@ -2,23 +2,49 @@ using UnityEngine;
 
 public class QuickTimeEventHandler : MonoBehaviour
 {
+    [SerializeField] private Canvas canvas;
+    public GameObject quickTimeButton;
+    private float timer;
+    [SerializeField] private float quickTimeFrequency = 3f;
 
+    public float maxButtonScale, minButtonScale;
+    [SerializeField] private float baseButtonRadius;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-        
+        timer = quickTimeFrequency;
+        canvas = FindAnyObjectByType<Canvas>();
+        baseButtonRadius = quickTimeButton.GetComponent<RectTransform>().rect.width/2;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (timer < quickTimeFrequency)
+        {
+            timer += Time.deltaTime;
+            if (timer >= quickTimeFrequency)
+            {
+                SpawnQuickTimeButton();
+                timer = 0;
+            }
+        }
+    }
+
+    private void SpawnQuickTimeButton()
+    {
+        float ButtonScaler = Random.Range(minButtonScale, maxButtonScale);
+        float buttonRadius = baseButtonRadius * ButtonScaler;
+        Vector2 randomSpawnLocation = new Vector2(Random.Range(buttonRadius, Screen.width - buttonRadius), 
+            Random.Range(buttonRadius, Screen.height - buttonRadius));
+        GameObject newQuickTimeButton = Instantiate(quickTimeButton, randomSpawnLocation, new Quaternion(), canvas.transform);
+        newQuickTimeButton.transform.localScale = new Vector3(ButtonScaler, ButtonScaler, 1);
     }
 
     private void StartQuickTimeEvent()
     {
-
+        timer = 0;
     }
 
     private void OnTriggerEnter(Collider other)

@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 13095
+  controlID: 22118
   draggingID: 0
 --- !u!114 &2
 MonoBehaviour:
@@ -95,7 +95,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 13096
+  controlID: 22119
   draggingID: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 13097
+  controlID: 22120
   draggingID: 0
 --- !u!114 &5
 MonoBehaviour:
@@ -244,8 +244,8 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 5af6fbff
-      m_LastClickedID: -264614
+      m_SelectedIDs: 8803fcff
+      m_LastClickedID: -261240
       m_ExpandedIDs: 2ef6fbff5af6fbfff822fcff14fdfcffe8f6fdffdcfbfeff20fbffffa4b70400
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -299,7 +299,7 @@ MonoBehaviour:
   - {fileID: 9}
   - {fileID: 10}
   m_Selected: 1
-  m_LastSelected: 2
+  m_LastSelected: 3
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -917,9 +917,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 505.78354, y: 269.99872, z: 5.042453}
+    m_Target: {x: -0.48770684, y: 9.80249, z: -0.14021918}
     speed: 2
-    m_Value: {x: 505.78354, y: 269.99872, z: 5.042453}
+    m_Value: {x: -0.48770684, y: 9.80249, z: -0.14021918}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -969,9 +969,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 65.95496
+    m_Target: 14.88794
     speed: 2
-    m_Value: 65.95496
+    m_Value: 14.88794
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1080,7 +1080,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Downloaded Assets/Kenny's Assets/Game Icons Expansion/PNG/Colored/2x
+    - Assets/Prefabs/UI
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1090,16 +1090,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Downloaded Assets/Kenny's Assets/Game Icons Expansion/PNG/Colored/2x
+  - Assets/Prefabs/UI
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Leon Dino\Git\Gamejam2025\GameJam2025
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 143}
-    m_SelectedIDs: 3a180100
-    m_LastClickedID: 71738
-    m_ExpandedIDs: 000000008417010086170100881701008a1701008c1701008e17010090170100921701009417010096170100981701009a1701009c1701009e170100a0170100a2170100a4170100a6170100a817010046180100e0bc0500e2bc0500e4bc0500e6bc0500e8bc050000ca9a3b
+    scrollPos: {x: 0, y: 407}
+    m_SelectedIDs: decf0f00
+    m_LastClickedID: 1036254
+    m_ExpandedIDs: 000000008417010086170100881701008a1701008c1701008e17010090170100921701009417010096170100981701009a1701009c1701009e170100a0170100a2170100a4170100a6170100a81701004618010060180100e0bc0500e2bc0500e4bc0500e6bc0500e8bc050000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1154,9 +1154,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 5af6fbff
-    m_LastClickedInstanceID: -264614
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 8803fcff
+    m_LastClickedInstanceID: -261240
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300009003030082050300b803030000000000f025010058260100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
