@@ -18,14 +18,18 @@ public class PlayerControler : MonoBehaviour
     [Range(0, 2)]
     [SerializeField] private float walkingAnimationSpeed = 1f;
     private Vector2 movementVector;
+    public bool IsInQuickTimeEvent { get; set; }
 
     private Animator animator;
+    [HideInInspector] public PlayerInput playerInput;
 
     // Initializing variables in Awake()
     void Awake()
     {
         movementVector = Vector2.zero;
         animator = GetComponent<Animator>();
+        playerInput = GetComponent<PlayerInput>();
+        IsInQuickTimeEvent = false;
     }
 
     // FixedUpdate
