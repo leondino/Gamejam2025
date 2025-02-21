@@ -48,7 +48,7 @@ public class PlayerControler : MonoBehaviour
         transform.position += new Vector3(movementVector.x, 0, movementVector.y) * movementSpeed * Time.deltaTime;
         if (movementVector != Vector2.zero)
         {
-            transform.LookAt(new Vector3(transform.position.x + movementVector.x, 0, 
+            transform.LookAt(new Vector3(transform.position.x + movementVector.x, transform.position.y, 
                 transform.position.z + movementVector.y));
             animator.SetBool("isWalking", true);
             animator.speed = walkingAnimationSpeed;
