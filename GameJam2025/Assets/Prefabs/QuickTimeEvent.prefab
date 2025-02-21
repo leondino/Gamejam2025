@@ -52,8 +52,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.58, y: -2.58, z: 11.18}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 4.58, y: 2.58, z: 5.3022428}
+  m_Center: {x: 0, y: 0, z: 0.22458959}
 --- !u!114 &5609996363975739202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,6 +66,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47235f17e57798c4fa753a731e9d66e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnEventSucceeded:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEventFailed:
+    m_PersistentCalls:
+      m_Calls: []
   canvas: {fileID: 0}
   quickTimeButton: {fileID: 4518322574917936324, guid: 91bbc64313b05fa4ca2b9f83fcec7ca9, type: 3}
   quickTimeFrequency: 3

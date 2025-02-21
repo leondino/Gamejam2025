@@ -19,6 +19,7 @@ public class QuickTimeEventHandler : MonoBehaviour
     public float secondBeforeButtonShrink = 1f;
     private float baseButtonRadius;
     private bool eventCompleted = false;
+    private PlayerControler thePlayer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -26,12 +27,13 @@ public class QuickTimeEventHandler : MonoBehaviour
         timer = quickTimeFrequency;
         canvas = FindAnyObjectByType<Canvas>();
         baseButtonRadius = quickTimeButton.GetComponent<RectTransform>().rect.width/2;
+        thePlayer = FindAnyObjectByType<PlayerControler>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (timer < quickTimeFrequency &! eventCompleted)
+        if (timer < quickTimeFrequency)
         {
             timer += Time.deltaTime;
             if (timer >= quickTimeFrequency)
@@ -42,22 +44,30 @@ public class QuickTimeEventHandler : MonoBehaviour
         }
 
         // Check if the player has reached the maximum amount of clicks to complete the event
-        if (currentClicks >= maxClicks)
+        if ((currentClicks >= maxClicks) &! eventCompleted)
         {
             EventSucceeded();
         }
     }
 
+    private void EndQuickTimeEvent() 
+    {
+        timer = quickTimeFrequency;
+        thePlayer.IsInQuickTimeEvent = false;
+        thePlayer.playerInput.ActivateInput();
+        eventCompleted = true;     
+    }
+
     public void EventSucceeded()
     {
-        eventCompleted = true;
+        EndQuickTimeEvent();
         OnEventSucceeded.Invoke();
         Debug.Log("Quick time event succeeded!");
     }
 
     public void EventFailed()
     {
-        eventCompleted = true;
+        EndQuickTimeEvent();
         OnEventFailed.Invoke();
         Debug.Log("Quick time event FAILED!!!");
     }
@@ -83,10 +93,15 @@ public class QuickTimeEventHandler : MonoBehaviour
     private void StartQuickTimeEvent()
     {
         timer = 0;
+        thePlayer.IsInQuickTimeEvent = true;
+        thePlayer.playerInput.DeactivateInput();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        StartQuickTimeEvent();
+        if (!eventCompleted)
+        {
+            StartQuickTimeEvent();
+        }
     }
 }
