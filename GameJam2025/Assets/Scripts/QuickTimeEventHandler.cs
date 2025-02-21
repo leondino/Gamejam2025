@@ -69,7 +69,7 @@ public class QuickTimeEventHandler : MonoBehaviour
     {
         EndQuickTimeEvent();
         OnEventFailed.Invoke();
-        Debug.Log("Quick time event FAILED!!!");
+        Debug.Log("Quick time event FAILED!!!"); 
     }
 
     /// <summary>
