@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 270390076548784142}
   - component: {fileID: 5769316270281397967}
   - component: {fileID: 8357359377207026044}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: InvisibleWall
   m_TagString: NoCameraHide
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}

@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class MetroShooter : MonoBehaviour
+public class MetroShooter : FailEvent
 {
-    private GameObject thePlayer;
+    private PlayerControler thePlayer;
     private Rigidbody playerRB;
 
     [SerializeField] private Vector3 shootDirection;
@@ -10,27 +10,25 @@ public class MetroShooter : MonoBehaviour
 
     private void Awake()
     {
-        thePlayer = FindAnyObjectByType<PlayerControler>().gameObject;
+        thePlayer = PlayerControler.Instance;
         playerRB = thePlayer.GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    public override void FailAction()
     {
-        
+        base.FailAction();
+        PushPlayerIn();
     }
 
     public void PushPlayerIn()
     {
-        thePlayer.layer = 7;
         playerRB.AddForce(Vector3.left * 10, ForceMode.Impulse);
-        playerRB.constraints = RigidbodyConstraints.None; 
-        //RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ; //RigidbodyConstraints.None;
+        thePlayer.animator.SetBool("doesTPose", false);
     }
 
     public void ShootPlayerOut()
     {
-        thePlayer.GetComponent<Animator>().SetBool("doesTPose", true);
+        thePlayer.animator.SetBool("doesTPose", true);
         playerRB.AddForce(shootDirection * shootForce, ForceMode.Impulse);
     }
 

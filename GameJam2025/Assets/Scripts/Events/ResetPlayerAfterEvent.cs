@@ -1,40 +1,58 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class ResetPlayerAfterEvent : MonoBehaviour
 {
-    public bool shouldReset;
-    public float delay;
+    [HideInInspector] public bool shouldReset;
+    private float delay;
+    [SerializeField]private bool resetOldLocation = true;
+    private Rigidbody rBody;
+    private Animator animator;
+
+    private void Awake()
+    {
+        rBody = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
+    }
+
     public void FixedUpdate()
     {
         if (shouldReset)
-        {   Debug.Log("RESET PLAYER");
-            this.ResetPlayer();
+        {
+            Debug.Log("RESET PLAYER");
             this.shouldReset = false;
+            ResetPlayer();
         }
     }
-    
-    public void ResetPlayer()
+    private void ResetPlayer()
     {
-        PlayerControler thePlayer = FindAnyObjectByType<PlayerControler>();
-        thePlayer.gameObject.layer = 7;
-        thePlayer.gameObject.GetComponent<Rigidbody>().freezeRotation = false;
-        Vector3 playerPosition = thePlayer.transform.position;
-        
-        StartCoroutine(SetPositionAfterDelay(playerPosition));
-    }
-    
-    IEnumerator SetPositionAfterDelay(Vector3 newPosition)
-    {
-        yield return new WaitForSeconds(delay);
-        transform.position = newPosition;
-        gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+        gameObject.layer = 7;
+        gameObject.GetComponent<Rigidbody>().freezeRotation = false;
+        animator.SetBool("doesTPose", true);
+
+        StartCoroutine(SetPositionAfterDelay(resetOldLocation));
     }
 
-    public void TriggerReset(float delay)
+    IEnumerator SetPositionAfterDelay(bool resetOldLocation)
+    {
+        Vector3 oldPosition = transform.position;
+        yield return new WaitForSeconds(delay);
+        if (resetOldLocation)
+        {
+            transform.position = oldPosition;
+        }
+        rBody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+        rBody.linearVelocity = Vector3.zero;
+        rBody.angularVelocity = Vector3.zero;
+        rBody.rotation = Quaternion.identity;
+        animator.SetBool("doesTPose", false);
+        gameObject.layer = 0;
+    }
+    public void TriggerReset(float delay, bool resetOldLocation)
     {
         this.delay = delay;
+        //Debug.Log(resetOldLocation);
+        this.resetOldLocation = resetOldLocation;
         shouldReset = true;
     }
 }

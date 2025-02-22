@@ -9,6 +9,8 @@ public class PlayerControler : MonoBehaviour
 {
     // Declaration of variables
 
+    public static PlayerControler Instance { get; private set; }
+
     /// <summary>
     /// Speed at which the player character moves
     /// </summary>
@@ -20,14 +22,19 @@ public class PlayerControler : MonoBehaviour
     private Vector2 movementVector;
     public bool IsInQuickTimeEvent { get; set; }
 
-    private Animator animator;
+    [HideInInspector] public Animator animator;
+    [HideInInspector] public ResetPlayerAfterEvent playerReseter;
     [HideInInspector] public PlayerInput playerInput;
 
     // Initializing variables in Awake()
     void Awake()
     {
+        if (Instance == null)
+            Instance = this;
+
         movementVector = Vector2.zero;
         animator = GetComponent<Animator>();
+        playerReseter = GetComponent<ResetPlayerAfterEvent>();
         playerInput = GetComponent<PlayerInput>();
         IsInQuickTimeEvent = false;
     }
