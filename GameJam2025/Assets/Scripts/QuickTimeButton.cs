@@ -45,7 +45,7 @@ public class QuickTimeButton : MonoBehaviour
         // Remove button when it reaches the minimum scale
         if (buttonScale < minScaleToRemove)
         {
-            if (!isClicked)
+            if (!isClicked &! currentQuickTimeEvent.eventCompleted)
             {
                 currentQuickTimeEvent.EventFailed();
                 Debug.Log("Button not clicked in time!!!");

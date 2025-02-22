@@ -18,7 +18,7 @@ public class QuickTimeEventHandler : MonoBehaviour
     public int buttonShrinkPercentageSpeed = 5;
     public float secondBeforeButtonShrink = 1f;
     private float baseButtonRadius;
-    private bool eventCompleted = false;
+    [HideInInspector] public bool eventCompleted = false;
     private PlayerControler thePlayer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

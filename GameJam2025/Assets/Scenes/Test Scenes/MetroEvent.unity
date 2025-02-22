@@ -234252,6 +234252,10 @@ PrefabInstance:
       value: 0.55150604
       objectReference: {fileID: 0}
     - target: {fileID: 5609996363975739202, guid: ab82484fc0868104eb39cc065a755107, type: 3}
+      propertyPath: quickTimeFrequency
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5609996363975739202, guid: ab82484fc0868104eb39cc065a755107, type: 3}
       propertyPath: secondBeforeButtonShrink
       value: 1
       objectReference: {fileID: 0}
