@@ -3,15 +3,10 @@ using UnityEngine;
 public class MetroShooter : FailEvent
 {
     private PlayerControler thePlayer;
-    private Rigidbody playerRB;
+    private bool hasShotPlayer = false;
 
     [SerializeField] private Vector3 shootDirection;
     [SerializeField] private float shootForce;
-
-    private void Awake()
-    {
-        thePlayer = PlayerControler.Instance;
-    }
 
     public override void FailAction()
     {
@@ -21,6 +16,7 @@ public class MetroShooter : FailEvent
 
     public void PushPlayerIn()
     {
+        thePlayer = PlayerControler.Instance;
         thePlayer.playerRB.AddForce(Vector3.left * 10, ForceMode.Impulse);
     }
 
@@ -34,8 +30,12 @@ public class MetroShooter : FailEvent
     {
         if (other.GetComponent<PlayerControler>())
         {
-            ShootPlayerOut();
-            Debug.Log("Player has been shot out of the metro");
+            if (!hasShotPlayer)
+            {
+                hasShotPlayer = true;
+                ShootPlayerOut();
+                Debug.Log("Player has been shot out of the metro");
+            }
         }
     }
 }

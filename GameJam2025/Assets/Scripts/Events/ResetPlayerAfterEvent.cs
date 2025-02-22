@@ -5,7 +5,7 @@ public class ResetPlayerAfterEvent : MonoBehaviour
 {
     [HideInInspector] public bool shouldReset;
     private float delay;
-    private bool resetOldLocation = true;
+    private bool resetOldLocation = true, disableCamera = true;
     private Rigidbody rBody;
     private Animator animator;
 
@@ -28,6 +28,7 @@ public class ResetPlayerAfterEvent : MonoBehaviour
     {
         gameObject.layer = 7;
         gameObject.GetComponent<Rigidbody>().freezeRotation = false;
+        Camera.main.transform.parent.GetComponent<CameraFollow>().enabled = !disableCamera;
 
         StartCoroutine(SetPositionAfterDelay(resetOldLocation));
     }
@@ -46,12 +47,14 @@ public class ResetPlayerAfterEvent : MonoBehaviour
         rBody.angularVelocity = Vector3.zero;
         rBody.rotation = Quaternion.identity;
         gameObject.layer = 0;
+        Camera.main.transform.parent.GetComponent<CameraFollow>().enabled = true;
     }
-    public void TriggerReset(float delay, bool resetOldLocation)
+    public void TriggerReset(float delay, bool resetOldLocation, bool disableCamera)
     {
         this.delay = delay;
         //Debug.Log(resetOldLocation);
         this.resetOldLocation = resetOldLocation;
+        this.disableCamera = disableCamera;
         shouldReset = true;
     }
 }

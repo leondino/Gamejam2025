@@ -37,6 +37,7 @@ public class PlayerControler : MonoBehaviour
         animator = GetComponent<Animator>();
         playerReseter = GetComponent<ResetPlayerAfterEvent>();
         playerInput = GetComponent<PlayerInput>();
+        playerRB = GetComponent<Rigidbody>();
         IsInQuickTimeEvent = false;
     }
 

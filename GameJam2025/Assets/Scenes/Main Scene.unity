@@ -24862,6 +24862,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resetDelay: 3
   resetOldLocation: 1
+  disableCamera: 1
   carForce: 10000
 --- !u!65 &182104096
 BoxCollider:
@@ -45707,6 +45708,10 @@ PrefabInstance:
       propertyPath: carForce
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 1320026228566476800, guid: 725cad48ba13c1f47a8e06c93cfd4705, type: 3}
+      propertyPath: disableCamera
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3200211360804804609, guid: 725cad48ba13c1f47a8e06c93cfd4705, type: 3}
       propertyPath: m_TagString
       value: NoCameraHide
@@ -45722,6 +45727,10 @@ PrefabInstance:
     - target: {fileID: 6302373076704887416, guid: 725cad48ba13c1f47a8e06c93cfd4705, type: 3}
       propertyPath: carForce
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302373076704887416, guid: 725cad48ba13c1f47a8e06c93cfd4705, type: 3}
+      propertyPath: disableCamera
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6672475155546707676, guid: 725cad48ba13c1f47a8e06c93cfd4705, type: 3}
       propertyPath: m_LocalPosition.x
@@ -174131,6 +174140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resetDelay: 3
   resetOldLocation: 1
+  disableCamera: 1
   carForce: 10000
 --- !u!65 &1241958723
 BoxCollider:
@@ -185919,6 +185929,10 @@ PrefabInstance:
     - target: {fileID: 31165490874505483, guid: caa389b388186444cb7570b11da22814, type: 3}
       propertyPath: m_TagString
       value: NoCameraHide
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479002458445553523, guid: caa389b388186444cb7570b11da22814, type: 3}
+      propertyPath: shootForce
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3065438919548663748, guid: caa389b388186444cb7570b11da22814, type: 3}
       propertyPath: quickTimeText
@@ -236216,7 +236230,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4719998057592191882, guid: 8f1af7bcdbd7ce042a62c70baeff6e7f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.1
+      value: -13.1
       objectReference: {fileID: 0}
     - target: {fileID: 4719998057592191882, guid: 8f1af7bcdbd7ce042a62c70baeff6e7f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -236224,7 +236238,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4719998057592191882, guid: 8f1af7bcdbd7ce042a62c70baeff6e7f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 68.7
+      value: 39.3
       objectReference: {fileID: 0}
     - target: {fileID: 4719998057592191882, guid: 8f1af7bcdbd7ce042a62c70baeff6e7f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -252674,6 +252688,10 @@ PrefabInstance:
       propertyPath: OnEventSucceeded.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1320026228566476800, guid: 725cad48ba13c1f47a8e06c93cfd4705, type: 3}
+      propertyPath: disableCamera
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3913603095639639423, guid: 725cad48ba13c1f47a8e06c93cfd4705, type: 3}
       propertyPath: m_TagString
       value: NoCameraHide
@@ -252721,6 +252739,10 @@ PrefabInstance:
     - target: {fileID: 6103938754497820311, guid: 725cad48ba13c1f47a8e06c93cfd4705, type: 3}
       propertyPath: m_TagString
       value: NoCameraHide
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302373076704887416, guid: 725cad48ba13c1f47a8e06c93cfd4705, type: 3}
+      propertyPath: disableCamera
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6672475155546707676, guid: 725cad48ba13c1f47a8e06c93cfd4705, type: 3}
       propertyPath: m_LocalPosition.x
