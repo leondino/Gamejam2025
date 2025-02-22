@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class DriveByEvent : FailEvent
 {
+    [SerializeField] private float carForce = 10000f;
     public override void FailAction()
     {
         base.FailAction();
@@ -20,7 +21,7 @@ public class DriveByEvent : FailEvent
     {
         Rigidbody carRb = GetComponent<Rigidbody>();
         Vector3 forceDirection = transform.forward; // Apply force in the forward direction
-        float forceAmount = 1000f; // Adjust this value for more or less force
+        float forceAmount = carForce; // Adjust this value for more or less force
         
         carRb.AddForce(forceDirection * forceAmount, ForceMode.Impulse);
     }
