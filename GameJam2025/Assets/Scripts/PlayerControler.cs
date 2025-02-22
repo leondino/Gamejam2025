@@ -23,6 +23,7 @@ public class PlayerControler : MonoBehaviour
     public bool IsInQuickTimeEvent { get; set; }
 
     [HideInInspector] public Animator animator;
+    [HideInInspector] public Rigidbody playerRB;
     [HideInInspector] public ResetPlayerAfterEvent playerReseter;
     [HideInInspector] public PlayerInput playerInput;
 

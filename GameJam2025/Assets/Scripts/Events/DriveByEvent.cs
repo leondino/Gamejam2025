@@ -13,7 +13,7 @@ public class DriveByEvent : FailEvent
     public override void SuccesAction()
     {
         base.SuccesAction();
-        PlayerControler.Instance.transform.position += Vector3.forward * 2.5f;
+        PlayerControler.Instance.transform.position += PlayerControler.Instance.transform.forward * 2.5f;
         CrashCar();
     }
 

@@ -11,7 +11,6 @@ public class MetroShooter : FailEvent
     private void Awake()
     {
         thePlayer = PlayerControler.Instance;
-        playerRB = thePlayer.GetComponent<Rigidbody>();
     }
 
     public override void FailAction()
@@ -22,18 +21,21 @@ public class MetroShooter : FailEvent
 
     public void PushPlayerIn()
     {
-        playerRB.AddForce(Vector3.left * 10, ForceMode.Impulse);
+        thePlayer.playerRB.AddForce(Vector3.left * 10, ForceMode.Impulse);
     }
 
     public void ShootPlayerOut()
     {
         thePlayer.animator.SetBool("doesTPose", true);
-        playerRB.AddForce(shootDirection * shootForce, ForceMode.Impulse);
+        thePlayer.playerRB.AddForce(shootDirection * shootForce, ForceMode.Impulse);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        ShootPlayerOut();
-        Debug.Log("Player has been shot out of the metro");
+        if (other.GetComponent<PlayerControler>())
+        {
+            ShootPlayerOut();
+            Debug.Log("Player has been shot out of the metro");
+        }
     }
 }

@@ -99,7 +99,7 @@ public class QuickTimeEventHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!eventCompleted)
+        if (!eventCompleted && other.GetComponent<PlayerControler>())
         {
             StartQuickTimeEvent();
         }

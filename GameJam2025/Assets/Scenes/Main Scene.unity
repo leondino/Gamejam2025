@@ -236064,7 +236064,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4719998057592191882, guid: 8f1af7bcdbd7ce042a62c70baeff6e7f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.4
+      value: -17.1
       objectReference: {fileID: 0}
     - target: {fileID: 4719998057592191882, guid: 8f1af7bcdbd7ce042a62c70baeff6e7f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -236072,7 +236072,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4719998057592191882, guid: 8f1af7bcdbd7ce042a62c70baeff6e7f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 61.4
+      value: 68.7
       objectReference: {fileID: 0}
     - target: {fileID: 4719998057592191882, guid: 8f1af7bcdbd7ce042a62c70baeff6e7f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -252406,6 +252406,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 865169420403785501, guid: 725cad48ba13c1f47a8e06c93cfd4705, type: 3}
+      propertyPath: quickTimeFrequency
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 865169420403785501, guid: 725cad48ba13c1f47a8e06c93cfd4705, type: 3}
       propertyPath: OnEventFailed.m_PersistentCalls.m_Calls.Array.size
       value: 4
