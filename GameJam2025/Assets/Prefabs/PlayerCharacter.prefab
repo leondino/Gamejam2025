@@ -1473,6 +1473,7 @@ GameObject:
   - component: {fileID: 4719998057592191882}
   - component: {fileID: 663801839941540908}
   - component: {fileID: 7050847897052090324}
+  - component: {fileID: 5899913705517462102}
   - component: {fileID: 1516185760148924213}
   - component: {fileID: 6792213961074610291}
   - component: {fileID: 1912369610022606913}
@@ -1521,7 +1522,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 772f09084c71b0944bd06fbbc2d1dc20, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
@@ -1545,6 +1546,23 @@ MonoBehaviour:
   movementSpeed: 2
   idleAnimationSpeed: 0.75
   walkingAnimationSpeed: 1
+  animator: {fileID: 0}
+  playerReseter: {fileID: 0}
+  playerInput: {fileID: 0}
+--- !u!114 &5899913705517462102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5202029939277684532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20f2fd5811be2d542a8ab378fa23b388, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shouldReset: 0
+  resetOldLocation: 1
 --- !u!114 &1516185760148924213
 MonoBehaviour:
   m_ObjectHideFlags: 0

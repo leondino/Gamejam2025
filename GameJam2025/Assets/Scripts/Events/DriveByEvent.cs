@@ -9,6 +9,13 @@ public class DriveByEvent : FailEvent
         CrashCar();
     }
 
+    public override void SuccesAction()
+    {
+        base.SuccesAction();
+        PlayerControler.Instance.transform.position += Vector3.forward * 2.5f;
+        CrashCar();
+    }
+
     public void CrashCar()
     {
         Rigidbody carRb = GetComponent<Rigidbody>();

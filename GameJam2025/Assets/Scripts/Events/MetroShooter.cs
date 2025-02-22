@@ -23,7 +23,6 @@ public class MetroShooter : FailEvent
     public void PushPlayerIn()
     {
         playerRB.AddForce(Vector3.left * 10, ForceMode.Impulse);
-        thePlayer.animator.SetBool("doesTPose", false);
     }
 
     public void ShootPlayerOut()

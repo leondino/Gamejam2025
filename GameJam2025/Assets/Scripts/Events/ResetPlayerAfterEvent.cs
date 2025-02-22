@@ -5,7 +5,7 @@ public class ResetPlayerAfterEvent : MonoBehaviour
 {
     [HideInInspector] public bool shouldReset;
     private float delay;
-    [SerializeField]private bool resetOldLocation = true;
+    private bool resetOldLocation = true;
     private Rigidbody rBody;
     private Animator animator;
 
@@ -28,7 +28,6 @@ public class ResetPlayerAfterEvent : MonoBehaviour
     {
         gameObject.layer = 7;
         gameObject.GetComponent<Rigidbody>().freezeRotation = false;
-        animator.SetBool("doesTPose", true);
 
         StartCoroutine(SetPositionAfterDelay(resetOldLocation));
     }
@@ -41,11 +40,11 @@ public class ResetPlayerAfterEvent : MonoBehaviour
         {
             transform.position = oldPosition;
         }
+        animator.SetBool("doesTPose", false);
         rBody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
         rBody.linearVelocity = Vector3.zero;
         rBody.angularVelocity = Vector3.zero;
         rBody.rotation = Quaternion.identity;
-        animator.SetBool("doesTPose", false);
         gameObject.layer = 0;
     }
     public void TriggerReset(float delay, bool resetOldLocation)

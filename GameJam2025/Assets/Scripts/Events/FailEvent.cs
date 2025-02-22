@@ -7,8 +7,11 @@ public class FailEvent : MonoBehaviour
 
     public virtual void FailAction()
     {
-        Debug.Log(resetOldLocation);
-        Debug.Log("FailAction");
         PlayerControler.Instance.playerReseter.TriggerReset(resetDelay, resetOldLocation);
+    }
+
+    public virtual void SuccesAction()
+    {
+
     }
 }
