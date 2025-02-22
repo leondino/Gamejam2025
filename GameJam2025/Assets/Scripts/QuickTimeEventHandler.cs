@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -6,7 +7,10 @@ public class QuickTimeEventHandler : MonoBehaviour
     public UnityEvent OnEventSucceeded = new UnityEvent();
     public UnityEvent OnEventFailed = new UnityEvent();
 
-    [SerializeField] private Canvas canvas;
+    private Canvas canvas;
+    [SerializeField] private string eventDescription;
+    [SerializeField] private float descriptionDisplayTime = 3f;
+    private bool descriptionBeenDisplayed = false;
     public GameObject quickTimeButton;
     private float timer;
     [SerializeField] private float quickTimeFrequency = 3f;
@@ -21,10 +25,17 @@ public class QuickTimeEventHandler : MonoBehaviour
     [HideInInspector] public bool eventCompleted = false;
     private PlayerControler thePlayer;
 
+    [SerializeField] private TextMeshProUGUI quickTimeText;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
-        timer = quickTimeFrequency;
+        // If somehow the description display time is less than the quick time frequency, set it to the quick time frequency
+        if (descriptionDisplayTime < quickTimeFrequency)
+        {
+            descriptionDisplayTime = quickTimeFrequency;
+        }
+        timer = descriptionDisplayTime;
         canvas = FindAnyObjectByType<Canvas>();
         baseButtonRadius = quickTimeButton.GetComponent<RectTransform>().rect.width/2;
         thePlayer = FindAnyObjectByType<PlayerControler>();
@@ -33,13 +44,18 @@ public class QuickTimeEventHandler : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (timer < quickTimeFrequency)
+        if (timer < descriptionDisplayTime)
         {
             timer += Time.deltaTime;
-            if (timer >= quickTimeFrequency)
+            if (timer >= quickTimeFrequency && descriptionBeenDisplayed)
             {
                 SpawnQuickTimeButton();
                 timer = 0;
+            }
+
+            if (timer >= descriptionDisplayTime &! descriptionBeenDisplayed)
+            {
+                RemoveDescription();
             }
         }
 
@@ -50,9 +66,17 @@ public class QuickTimeEventHandler : MonoBehaviour
         }
     }
 
+    private void RemoveDescription()
+    {       
+        quickTimeText.gameObject.SetActive(false);
+        descriptionBeenDisplayed = true;
+        SpawnQuickTimeButton();
+        timer = 0;
+    }
+
     private void EndQuickTimeEvent() 
     {
-        timer = quickTimeFrequency;
+        timer = descriptionDisplayTime;
         thePlayer.IsInQuickTimeEvent = false;
         thePlayer.playerInput.ActivateInput();
         eventCompleted = true;     
@@ -78,6 +102,7 @@ public class QuickTimeEventHandler : MonoBehaviour
     /// </summary>
     private void SpawnQuickTimeButton()
     {
+        quickTimeText.gameObject.SetActive(false);
         float ButtonScaler = Random.Range(minButtonScale, maxButtonScale);
         float buttonRadius = baseButtonRadius * ButtonScaler;
         Vector2 randomSpawnLocation = new Vector2(Random.Range(buttonRadius, Screen.width - buttonRadius), 
@@ -95,6 +120,8 @@ public class QuickTimeEventHandler : MonoBehaviour
         timer = 0;
         thePlayer.IsInQuickTimeEvent = true;
         thePlayer.playerInput.DeactivateInput();
+        quickTimeText.text = eventDescription;
+        quickTimeText.gameObject.SetActive(true);
     }
 
     private void OnTriggerEnter(Collider other)
