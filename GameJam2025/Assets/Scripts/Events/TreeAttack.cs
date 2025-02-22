@@ -1,4 +1,6 @@
+using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 
 public class TreeAttack : FailEvent
@@ -8,6 +10,7 @@ public class TreeAttack : FailEvent
     [SerializeField] private float rizeSpeed = 1f;
     [SerializeField] private float rizeDuration = 3f;
     [SerializeField] private float rotationSpeed = 1f;
+    [SerializeField] private float hitForce = 20f;
 
     private float timer = 0f;
     private bool isTimerRunning = false;
@@ -26,7 +29,10 @@ public class TreeAttack : FailEvent
                 foreach (Rigidbody tree in flyingTrees)
                 {
                     if (attackMode)
+                    {
                         TreeAttacksPlayer(tree);
+                        StartCoroutine(FireTreeOnPlayer(tree));
+                    }
                     else
                         DropTree(tree);
                 }
@@ -75,12 +81,22 @@ public class TreeAttack : FailEvent
     private void TreeAttacksPlayer(Rigidbody tree)
     {
         treeIsAttacking = true;
-        tree.linearVelocity = Vector3.zero;
         Vector3 direction = tree.position - PlayerControler.Instance.transform.position;
         Quaternion targetRotation = Quaternion.LookRotation(direction, Vector3.down);
         Vector3 eulertargetRotation = targetRotation.eulerAngles;
         eulertargetRotation.x *= -1;
         targetRotation = Quaternion.Euler(eulertargetRotation);
-        tree.rotation = targetRotation; //Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+        tree.rotation = Quaternion.Slerp(tree.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+    }
+
+    IEnumerator FireTreeOnPlayer(Rigidbody tree)
+    {
+        yield return new WaitForSeconds(1.5f);
+        tree.linearVelocity = Vector3.zero;
+        tree.useGravity = true;
+        treeIsAttacking = false;
+        Vector3 hitDirection = tree.position - PlayerControler.Instance.transform.position;
+        hitDirection.Normalize();
+        tree.AddForce(-hitDirection * hitForce, ForceMode.Impulse);
     }
 }
