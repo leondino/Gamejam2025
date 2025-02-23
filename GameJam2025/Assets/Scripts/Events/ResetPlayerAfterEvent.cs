@@ -48,6 +48,7 @@ public class ResetPlayerAfterEvent : MonoBehaviour
         rBody.rotation = Quaternion.identity;
         gameObject.layer = 0;
         Camera.main.transform.parent.GetComponent<CameraFollow>().enabled = true;
+        PlayerControler.Instance.playerLvlManager.IncreaseLevel(Random.Range(1000, 9999));
     }
     public void TriggerReset(float delay, bool resetOldLocation, bool disableCamera)
     {
