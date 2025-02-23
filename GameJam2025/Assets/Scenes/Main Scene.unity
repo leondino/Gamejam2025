@@ -30372,68 +30372,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 434358, guid: 804b4d4621262c6449916edf7614a719, type: 3}
   m_PrefabInstance: {fileID: 268887701}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &222526084
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 336598058}
-    m_Modifications:
-    - target: {fileID: 2906844244566236478, guid: d4c03416b4b69594abef9ebd392899bb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -15.459999
-      objectReference: {fileID: 0}
-    - target: {fileID: 2906844244566236478, guid: d4c03416b4b69594abef9ebd392899bb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2906844244566236478, guid: d4c03416b4b69594abef9ebd392899bb, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.3100014
-      objectReference: {fileID: 0}
-    - target: {fileID: 2906844244566236478, guid: d4c03416b4b69594abef9ebd392899bb, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 2906844244566236478, guid: d4c03416b4b69594abef9ebd392899bb, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2906844244566236478, guid: d4c03416b4b69594abef9ebd392899bb, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 2906844244566236478, guid: d4c03416b4b69594abef9ebd392899bb, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2906844244566236478, guid: d4c03416b4b69594abef9ebd392899bb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2906844244566236478, guid: d4c03416b4b69594abef9ebd392899bb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 2906844244566236478, guid: d4c03416b4b69594abef9ebd392899bb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7990338517227985208, guid: d4c03416b4b69594abef9ebd392899bb, type: 3}
-      propertyPath: m_Name
-      value: InvisibleWall (28)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d4c03416b4b69594abef9ebd392899bb, type: 3}
---- !u!4 &222526085 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2906844244566236478, guid: d4c03416b4b69594abef9ebd392899bb, type: 3}
-  m_PrefabInstance: {fileID: 222526084}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &222622562 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 420774, guid: 412e629bc1aeba94f84bc67e32a5cc7f, type: 3}
@@ -46000,12 +45938,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 865169420403785501, guid: 725cad48ba13c1f47a8e06c93cfd4705, type: 3}
       propertyPath: maxClicks
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 865169420403785501, guid: 725cad48ba13c1f47a8e06c93cfd4705, type: 3}
       propertyPath: quickTimeText
       value: 
       objectReference: {fileID: 99471986}
+    - target: {fileID: 865169420403785501, guid: 725cad48ba13c1f47a8e06c93cfd4705, type: 3}
+      propertyPath: maxButtonScale
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 865169420403785501, guid: 725cad48ba13c1f47a8e06c93cfd4705, type: 3}
       propertyPath: eventDescription
       value: Cross the road safely!
@@ -47138,7 +47080,6 @@ Transform:
   - {fileID: 43108774}
   - {fileID: 1328289213}
   - {fileID: 1433072256}
-  - {fileID: 222526085}
   - {fileID: 505048410}
   - {fileID: 672553296}
   - {fileID: 1508909100}
@@ -186095,12 +186036,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 288582238}
     - target: {fileID: 3065438919548663748, guid: caa389b388186444cb7570b11da22814, type: 3}
+      propertyPath: maxClicks
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065438919548663748, guid: caa389b388186444cb7570b11da22814, type: 3}
       propertyPath: quickTimeText
       value: 
       objectReference: {fileID: 99471986}
     - target: {fileID: 3065438919548663748, guid: caa389b388186444cb7570b11da22814, type: 3}
+      propertyPath: maxButtonScale
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065438919548663748, guid: caa389b388186444cb7570b11da22814, type: 3}
       propertyPath: eventDescription
       value: Don't fall into the subway station!
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065438919548663748, guid: caa389b388186444cb7570b11da22814, type: 3}
+      propertyPath: quickTimeFrequency
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7929547761389359184, guid: caa389b388186444cb7570b11da22814, type: 3}
       propertyPath: m_LocalPosition.x
@@ -236548,15 +236501,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4719998057592191882, guid: 8f1af7bcdbd7ce042a62c70baeff6e7f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.5
+      value: -19.53
       objectReference: {fileID: 0}
     - target: {fileID: 4719998057592191882, guid: 8f1af7bcdbd7ce042a62c70baeff6e7f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.33
+      value: 2.84
       objectReference: {fileID: 0}
     - target: {fileID: 4719998057592191882, guid: 8f1af7bcdbd7ce042a62c70baeff6e7f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.61
+      value: -6.18
       objectReference: {fileID: 0}
     - target: {fileID: 4719998057592191882, guid: 8f1af7bcdbd7ce042a62c70baeff6e7f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -252959,16 +252912,40 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 865169420403785501, guid: 725cad48ba13c1f47a8e06c93cfd4705, type: 3}
+      propertyPath: maxClicks
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 865169420403785501, guid: 725cad48ba13c1f47a8e06c93cfd4705, type: 3}
+      propertyPath: currentClicks
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 865169420403785501, guid: 725cad48ba13c1f47a8e06c93cfd4705, type: 3}
       propertyPath: quickTimeText
       value: 
       objectReference: {fileID: 99471986}
+    - target: {fileID: 865169420403785501, guid: 725cad48ba13c1f47a8e06c93cfd4705, type: 3}
+      propertyPath: maxButtonScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 865169420403785501, guid: 725cad48ba13c1f47a8e06c93cfd4705, type: 3}
+      propertyPath: minButtonScale
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 865169420403785501, guid: 725cad48ba13c1f47a8e06c93cfd4705, type: 3}
       propertyPath: eventDescription
       value: Cross the road safely! (Hard)
       objectReference: {fileID: 0}
     - target: {fileID: 865169420403785501, guid: 725cad48ba13c1f47a8e06c93cfd4705, type: 3}
       propertyPath: quickTimeFrequency
-      value: 0.5
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 865169420403785501, guid: 725cad48ba13c1f47a8e06c93cfd4705, type: 3}
+      propertyPath: secondBeforeButtonShrink
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 865169420403785501, guid: 725cad48ba13c1f47a8e06c93cfd4705, type: 3}
+      propertyPath: buttonShrinkPercentageSpeed
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 865169420403785501, guid: 725cad48ba13c1f47a8e06c93cfd4705, type: 3}
       propertyPath: OnEventFailed.m_PersistentCalls.m_Calls.Array.size
@@ -305407,9 +305384,29 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1180493565376641802, guid: 02e164457984e944d8b850a3b052e447, type: 3}
+      propertyPath: maxClicks
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1180493565376641802, guid: 02e164457984e944d8b850a3b052e447, type: 3}
       propertyPath: quickTimeText
       value: 
       objectReference: {fileID: 99471986}
+    - target: {fileID: 1180493565376641802, guid: 02e164457984e944d8b850a3b052e447, type: 3}
+      propertyPath: maxButtonScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1180493565376641802, guid: 02e164457984e944d8b850a3b052e447, type: 3}
+      propertyPath: minButtonScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1180493565376641802, guid: 02e164457984e944d8b850a3b052e447, type: 3}
+      propertyPath: quickTimeFrequency
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1180493565376641802, guid: 02e164457984e944d8b850a3b052e447, type: 3}
+      propertyPath: buttonShrinkPercentageSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7112567046477677110, guid: 02e164457984e944d8b850a3b052e447, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.02
@@ -305512,9 +305509,29 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7370733763080090232, guid: 8445bed0addd89449997ebedc46e477f, type: 3}
+      propertyPath: maxClicks
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7370733763080090232, guid: 8445bed0addd89449997ebedc46e477f, type: 3}
       propertyPath: quickTimeText
       value: 
       objectReference: {fileID: 99471986}
+    - target: {fileID: 7370733763080090232, guid: 8445bed0addd89449997ebedc46e477f, type: 3}
+      propertyPath: maxButtonScale
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7370733763080090232, guid: 8445bed0addd89449997ebedc46e477f, type: 3}
+      propertyPath: quickTimeFrequency
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 7370733763080090232, guid: 8445bed0addd89449997ebedc46e477f, type: 3}
+      propertyPath: secondBeforeButtonShrink
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7370733763080090232, guid: 8445bed0addd89449997ebedc46e477f, type: 3}
+      propertyPath: buttonShrinkPercentageSpeed
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
