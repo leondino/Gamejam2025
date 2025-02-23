@@ -37151,7 +37151,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -37249,7 +37249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetCamera: {fileID: 166116534}
-  ofset: {x: 0, y: 3, z: 0}
+  ofset: {x: 0, y: 4.5, z: 0}
 --- !u!224 &269084579
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37267,7 +37267,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 8.3344, y: 1.9588}
+  m_SizeDelta: {x: 20, y: 1.9588}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &269306445 stripped
 Transform:
@@ -39833,7 +39833,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 1024
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -39934,7 +39934,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 8.3344, y: 1.9588}
+  m_SizeDelta: {x: 20, y: 1.9588}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &288586690
 PrefabInstance:
@@ -236705,7 +236705,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4719998057592191882, guid: 8f1af7bcdbd7ce042a62c70baeff6e7f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.53
+      value: 4.55
       objectReference: {fileID: 0}
     - target: {fileID: 4719998057592191882, guid: 8f1af7bcdbd7ce042a62c70baeff6e7f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -236713,7 +236713,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4719998057592191882, guid: 8f1af7bcdbd7ce042a62c70baeff6e7f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.18
+      value: 66.72
       objectReference: {fileID: 0}
     - target: {fileID: 4719998057592191882, guid: 8f1af7bcdbd7ce042a62c70baeff6e7f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -305607,6 +305607,10 @@ PrefabInstance:
     - target: {fileID: 1180493565376641802, guid: 02e164457984e944d8b850a3b052e447, type: 3}
       propertyPath: quickTimeFrequency
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1180493565376641802, guid: 02e164457984e944d8b850a3b052e447, type: 3}
+      propertyPath: descriptionDisplayTime
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 1180493565376641802, guid: 02e164457984e944d8b850a3b052e447, type: 3}
       propertyPath: buttonShrinkPercentageSpeed
