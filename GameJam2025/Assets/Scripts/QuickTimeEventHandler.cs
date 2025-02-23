@@ -6,7 +6,7 @@ public class QuickTimeEventHandler : MonoBehaviour
 {
     public UnityEvent OnEventSucceeded = new UnityEvent();
     public UnityEvent OnEventFailed = new UnityEvent();
-
+    
     private Canvas canvas;
     [SerializeField] private string eventDescription;
     [SerializeField] private float descriptionDisplayTime = 3f;
@@ -26,7 +26,7 @@ public class QuickTimeEventHandler : MonoBehaviour
     private PlayerControler thePlayer;
 
     [SerializeField] private TextMeshProUGUI quickTimeText;
-
+    public TextMeshPro lvlText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -86,6 +86,7 @@ public class QuickTimeEventHandler : MonoBehaviour
     {
         EndQuickTimeEvent();
         OnEventSucceeded.Invoke();
+        PlayerControler.Instance.playerLvlManager.IncreaseLevel(1);
         Debug.Log("Quick time event succeeded!");
     }
 

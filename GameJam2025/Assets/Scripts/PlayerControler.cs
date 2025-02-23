@@ -26,7 +26,8 @@ public class PlayerControler : MonoBehaviour
     [HideInInspector] public Rigidbody playerRB;
     [HideInInspector] public ResetPlayerAfterEvent playerReseter;
     [HideInInspector] public PlayerInput playerInput;
-
+    [HideInInspector] public LvlManager playerLvlManager;
+    
     // Initializing variables in Awake()
     void Awake()
     {
@@ -37,6 +38,7 @@ public class PlayerControler : MonoBehaviour
         animator = GetComponent<Animator>();
         playerReseter = GetComponent<ResetPlayerAfterEvent>();
         playerInput = GetComponent<PlayerInput>();
+        playerLvlManager = GetComponent<LvlManager>();
         playerRB = GetComponent<Rigidbody>();
         IsInQuickTimeEvent = false;
     }
